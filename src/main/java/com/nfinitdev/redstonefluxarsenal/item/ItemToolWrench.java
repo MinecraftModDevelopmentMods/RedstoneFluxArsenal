@@ -5,8 +5,8 @@ public class ItemToolWrench extends ItemBase {
     public ItemToolWrench()
     {
         super();
-        setUnlocalizedName("redstonefluxarsenal.itemteslawrench");
-        setRegistryName("itemteslawrench");
+        setUnlocalizedName("redstonefluxarsenal.itemtoolrfwrench");
+        setRegistryName("itemtoolrfwrench");
     }
 
 }

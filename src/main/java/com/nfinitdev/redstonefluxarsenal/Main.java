@@ -30,7 +30,7 @@ public class Main {
     @Mod.Instance("redstonefluxarsenal")
     public static Main instance;
     public static CreativeTabs tab;
-    public static Item itemteslawrench,itemnetherstardust,itemteslariumdust,itemteslariumingot,itemtoolhandle;
+    public static Item itemtoolrfwrench,itemnetherstardust,itemteslariumdust,itemteslariumingot,itemtoolhandle;
 	public static Main MODID;
 	ToolMaterial WOODTOOL;
 	
@@ -38,6 +38,8 @@ public class Main {
 	//Armor Plates
 	public static Item itemrfenergizedplate;
 	public static Item itemrfenergizedcrystal;
+	public static Item itemrfenergizedgem;
+	public static Item itemrfdarkingot;
 
 	public static Item itemrfenergizedingot;
 	public static Item itemcomponent;
@@ -97,7 +99,7 @@ public class Main {
        // itemteslariumdust = registerItem(new ItemTeslariumDust());
        // itemteslariumingot = registerItem(new ItemTeslariumIngot());
         itemtoolhandle = registerItem(new ItemToolHandle());
-        itemteslawrench = registerItem(new ItemToolWrench());
+        itemtoolrfwrench = registerItem(new ItemToolRFWrench());
         
 
         
@@ -114,8 +116,12 @@ public class Main {
        //Dark Steel
        itemrfenergizedcrystal = registerItem(new ItemRFEnergizedCrystal());
 
+       itemrfenergizedgem = registerItem(new ItemRFEnergizedGem());
+
        itemrfenergizedplate = registerItem(new ItemRFEnergizedPlate());
        itemrfenergizedingot = registerItem(new ItemRFEnergizedIngot());
+       itemrfdarkingot = registerItem(new ItemRFDarkIngot());
+
        itemcomponent = registerItem(new ItemComponent());
        
        

@@ -12,10 +12,9 @@ public final class ModCrafting {
 	public static void initCrafting() {
 
 		
-		GameRegistry.addRecipe(new ItemStack(Main.itemcomponent, 1), new Object[] {" # ", "ICI", " # ", '#', Items.REDSTONE, 'I', new ItemStack(Items.DYE, 1, 4),'C',Main.itemrfenergizedcrystal});
-		GameRegistry.addRecipe(new ItemStack(Main.itemrfenergizedcrystal, 1), new Object[] {"###", "#C#", "###", '#', Items.REDSTONE, 'I', new ItemStack(Items.DYE, 1, 4),'C',Items.DIAMOND});
-		GameRegistry.addRecipe(new ItemStack(Main.itemrfenergizedingot, 1), new Object[] {"###", "#C#", "###", '#', Items.REDSTONE, 'I', new ItemStack(Items.DYE, 1, 4),'C',Items.IRON_INGOT});
-		//GameRegistry.addRecipe(new ItemStack(Main.itemrfenergizedingot, 1), new Object[] {" # ", "CIC", " # ", '#', Items.IRON_INGOT, 'I',Items.COAL, 'C',Blocks.OBSIDIAN});
+		GameRegistry.addRecipe(new ItemStack(Main.itemcomponent, 1), new Object[] {" # ", "ICI", " # ", '#', Items.REDSTONE, 'I', new ItemStack(Items.DYE, 1, 4),'C',Main.itemrfenergizedgem});
+		GameRegistry.addRecipe(new ItemStack(Main.itemrfenergizedgem, 1), new Object[] {"###", "#C#", "###", '#', Items.REDSTONE, 'I', new ItemStack(Items.DYE, 1, 4),'C',Items.DIAMOND});
+		GameRegistry.addRecipe(new ItemStack(Main.itemrfenergizedingot, 1), new Object[] {"###", "#C#", "###", '#', Items.REDSTONE, 'I', new ItemStack(Items.DYE, 1, 4),'C',Main.itemrfdarkingot});
 		GameRegistry.addRecipe(new ItemStack(Main.itemrfenergizedplate, 4), new Object[] {"## ", "## ", "   ", '#', Main.itemrfenergizedingot});
 		GameRegistry.addRecipe(new ItemStack(Main.itemcapacitorRF, 1), new Object[] {"C#C", "#I#", "C#C", '#', Items.REDSTONE, 'I',Main.itemcomponent, 'C',Blocks.GLASS});
 		GameRegistry.addRecipe(new ItemStack(Main.itemcapacitorTier2RF, 1), new Object[] {"C#C", "#I#", "C#C", '#', Blocks.REDSTONE_BLOCK, 'I',Main.itemcomponent, 'C',Blocks.GLASS});
@@ -30,9 +29,8 @@ public final class ModCrafting {
 		GameRegistry.addRecipe(new ItemStack(Main.rfArmorChestplate, 1), new Object[] {"#C#", "###", "###", '#', Main.itemrfenergizedplate, 'C',Main.itemcapacitorRF});
 		GameRegistry.addRecipe(new ItemStack(Main.rfArmorLeggings, 1), new Object[] {"###", "#C#", "# #", '#', Main.itemrfenergizedplate, 'C',Main.itemcapacitorRF});
 		GameRegistry.addRecipe(new ItemStack(Main.rfArmorBoots, 1), new Object[] {"   ", "# #", "#C#", '#', Main.itemrfenergizedplate, 'C',Main.itemcapacitorRF});
-	
-	
-	
+		GameRegistry.addSmelting(Items.IRON_INGOT, new ItemStack(Main.itemrfdarkingot), 1.0F);
+
 	}	
 	
 

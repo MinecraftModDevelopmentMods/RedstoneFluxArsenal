@@ -1,11 +1,11 @@
 [
 {
-  "modid": "energyarsenal",
-  "name": "Energy Arsenal",
-  "description": "Tesla Arsenal adds tools and weapons that use the energy of Tesla, the energy system added by the Tesla API.",
+  "modid": "redstonefluxarsenal",
+  "name": "Redstone Flux Arsenal",
+  "description": "Redstone Flux Arsenal adds tools and weapons that use the RF, the energy system added by the Redstone Flux API.",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "http://minecraft.curseforge.com/projects/tesla-arsenal",
+  "url": "https://minecraft.curseforge.com/projects/redstone-flux-arsenal",
   "updateUrl": "",
   "authorList": ["knoxhack"],
   "credits": "The Forge and FML guys, for making this example",

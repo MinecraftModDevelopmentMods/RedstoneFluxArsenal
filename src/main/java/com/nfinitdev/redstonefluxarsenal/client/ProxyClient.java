@@ -31,12 +31,14 @@ public class ProxyClient extends ProxyCommon {
 
     //Items
     ModelLoader.setCustomModelResourceLocation(Main.itemrfenergizedcrystal, 0, new ModelResourceLocation(Main.itemrfenergizedcrystal.getRegistryName(), "inventory"));
+    ModelLoader.setCustomModelResourceLocation(Main.itemrfenergizedgem, 0, new ModelResourceLocation(Main.itemrfenergizedgem.getRegistryName(), "inventory"));
+    ModelLoader.setCustomModelResourceLocation(Main.itemrfdarkingot, 0, new ModelResourceLocation(Main.itemrfdarkingot.getRegistryName(), "inventory"));
 
     ModelLoader.setCustomModelResourceLocation(Main.itemrfenergizedingot, 0, new ModelResourceLocation(Main.itemrfenergizedingot.getRegistryName(), "inventory"));
     ModelLoader.setCustomModelResourceLocation(Main.itemrfenergizedplate, 0, new ModelResourceLocation(Main.itemrfenergizedplate.getRegistryName(), "inventory"));
     ModelLoader.setCustomModelResourceLocation(Main.itemcomponent, 0, new ModelResourceLocation(Main.itemcomponent.getRegistryName(), "inventory"));
     ModelLoader.setCustomModelResourceLocation(Main.itemtoolhandle, 0, new ModelResourceLocation(Main.itemtoolhandle.getRegistryName(), "inventory"));
-    ModelLoader.setCustomModelResourceLocation(Main.itemteslawrench, 0, new ModelResourceLocation(Main.itemteslawrench.getRegistryName(), "inventory"));
+    ModelLoader.setCustomModelResourceLocation(Main.itemtoolrfwrench, 0, new ModelResourceLocation(Main.itemtoolrfwrench.getRegistryName(), "inventory"));
 
     //Capacitors RF
     ModelLoader.setCustomModelResourceLocation(Main.itemcapacitorRF, 0, new ModelResourceLocation(Main.itemcapacitorRF.getRegistryName(), "inventory"));
