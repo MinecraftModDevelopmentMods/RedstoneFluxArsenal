@@ -21,7 +21,7 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 
 
 
-@Mod(modid = "redstonefluxarsenal", name = "Redstone Flux Arsenal", version = "1.0",dependencies = "required-after:Forge", updateJSON = "https://raw.githubusercontent.com/knoxhack/Tesla-Arsenal/master/update.json")
+@Mod(modid = "redstonefluxarsenal", name = "Redstone Flux Arsenal", version = "1.0",dependencies = "required-after:forge", updateJSON = "https://raw.githubusercontent.com/knoxhack/Tesla-Arsenal/master/update.json")
 public class Main {
     
     @SidedProxy(serverSide = "com.nfinitdev.redstonefluxarsenal.common.ProxyCommon", clientSide = "com.nfinitdev.redstonefluxarsenal.client.ProxyClient")

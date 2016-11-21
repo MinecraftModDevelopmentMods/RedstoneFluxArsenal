@@ -60,9 +60,9 @@ public class ItemRFEnergizedArmor extends ItemRFArmor  implements IEnergyContain
 	{
 		if(armorType == EntityEquipmentSlot.LEGS)
 		{
-			return "redstonefluxarsenal:textures/armor/RF_armor_layer_2.png";
+			return "redstonefluxarsenal:textures/armor/rf_armor_layer_2.png";
 		}
-		return "redstonefluxarsenal:textures/armor/RF_armor_layer_1.png";
+		return "redstonefluxarsenal:textures/armor/rf_armor_layer_1.png";
 	}
 	
 
