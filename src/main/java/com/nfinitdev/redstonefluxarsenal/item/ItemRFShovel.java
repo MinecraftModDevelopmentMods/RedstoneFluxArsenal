@@ -41,7 +41,7 @@ public class ItemRFShovel extends ItemRF {
 	protected static String name = "itemrfshovel";
 
 	public ItemRFShovel() {
-		super(100000, 100, name);
+		super(500000, 100, name);
 		setMaxStackSize(1);
 		this.distanceFromPlayer = 6.5;
 		canRepair = false;

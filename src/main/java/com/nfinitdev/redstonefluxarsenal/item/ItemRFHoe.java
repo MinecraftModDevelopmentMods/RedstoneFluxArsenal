@@ -45,7 +45,7 @@ public class ItemRFHoe extends ItemRF {
 	protected static String name = "itemrfhoe";
 
 	public ItemRFHoe() {
-		super(100000, 100, name);
+		super(500000, 100, name);
 		setMaxStackSize(1);
 		this.distanceFromPlayer = 6.5;
 		canRepair = false;
