@@ -1,0 +1,26 @@
+{
+  "result": {
+    "item": "redstonefluxarsenal:itemrfcapacitortier1",
+	  "data":0
+  },
+  "pattern": [
+    "QpQ",
+    "QeQ",
+    "QpQ"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+	"Q": {
+      "item": "redstonefluxarsenal:itemrfdarkingot",
+	  "data":0
+    },
+	"p": {
+      "item": "redstonefluxarsenal:itemcomponent",
+	  "data":0
+    },
+	"e": {
+      "item": "redstonefluxarsenal:itemrfenergizedgem",
+	  "data":0
+    }
+  }
+}

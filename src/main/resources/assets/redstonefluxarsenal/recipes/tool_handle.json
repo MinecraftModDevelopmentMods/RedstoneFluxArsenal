@@ -1,0 +1,18 @@
+{
+  "result": {
+    "item": "redstonefluxarsenal:itemtoolhandle",
+	  "data":0
+  },
+  "pattern": [
+    "   ",
+    " Q ",
+    " Q "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+	"Q": {
+      "item": "redstonefluxarsenal:itemrfdarkingot",
+	  "data":0
+    }
+  }
+}

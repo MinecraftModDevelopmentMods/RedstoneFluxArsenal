@@ -1,0 +1,22 @@
+{
+  "result": {
+    "item": "redstonefluxarsenal:itemrfsword",
+	  "data":0
+  },
+  "pattern": [
+    " p ",
+    " p ",
+    " Q "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+	"Q": {
+      "item": "redstonefluxarsenal:itemtoolhandle",
+	  "data":0
+    },
+	"p": {
+      "item": "redstonefluxarsenal:itemrfenergizedingot",
+	  "data":0
+    }
+  }
+}

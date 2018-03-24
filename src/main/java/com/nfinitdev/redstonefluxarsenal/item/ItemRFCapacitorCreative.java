@@ -2,12 +2,16 @@ package com.nfinitdev.redstonefluxarsenal.item;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.annotation.Nullable;
+
 import com.nfinitdev.redstonefluxarsenal.Main;
+import com.nfinitdev.redstonefluxarsenal.init.ModItems;
 import com.mojang.realmsclient.gui.ChatFormatting;
 
-import cofh.api.energy.IEnergyContainerItem;
+import cofh.redstoneflux.api.IEnergyContainerItem;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.resources.I18n;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.item.EntityXPOrb;
@@ -20,6 +24,7 @@ import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.MinecraftForge;
@@ -42,7 +47,9 @@ public class ItemRFCapacitorCreative extends ItemRF {
 		setMaxDamage(0);
 
 	}
-
+    public void registerItemModel() {
+	    ModelLoader.setCustomModelResourceLocation(ModItems.itemcapacitorCreativeRF, 0, new ModelResourceLocation(ModItems.itemcapacitorCreativeRF.getRegistryName(), "inventory"));
+	}
 	@Override
 	@SideOnly(Side.CLIENT)
 	public boolean showDurabilityBar(ItemStack stack) {
@@ -55,12 +62,18 @@ public class ItemRFCapacitorCreative extends ItemRF {
 
 	@SideOnly(Side.CLIENT)
 	@Override
-	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
-        tooltip.add(ChatFormatting.GRAY + I18n.format("Charges other RF items in your inventory") );
-        tooltip.add(ChatFormatting.DARK_RED + I18n.format("[Energy Mode: ON]") );
-        tooltip.add(ChatFormatting.DARK_RED + I18n.format("")+ this.getEnergyStored(stack) + "/" + this.getMaxEnergyStored(stack)+ I18n.format(" RF"));
-
-	}
+    public int getRGBDurabilityForDisplay(ItemStack stack)
+    {
+        return MathHelper.hsvToRGB(Math.max(0.0F, (float) (1.0F - getDurabilityForDisplay(stack))) / 237.0F, 18.0F, 18.0F);
+    }
+	@Override
+    @SideOnly(Side.CLIENT)
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
+    {
+    	tooltip.add(ChatFormatting.GRAY + I18n.format("Charges other RF items in your inventory") );
+    	
+        tooltip.add(ChatFormatting.WHITE + I18n.format("Charge: ")+ ChatFormatting.RED + this.getMaxEnergyStored(stack)+ I18n.format(" RF"));
+    }
 
 
     @Override

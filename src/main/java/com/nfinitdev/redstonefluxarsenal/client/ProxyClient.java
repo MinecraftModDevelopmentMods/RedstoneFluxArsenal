@@ -2,62 +2,60 @@ package com.nfinitdev.redstonefluxarsenal.client;
 
 import com.nfinitdev.redstonefluxarsenal.Main;
 import com.nfinitdev.redstonefluxarsenal.common.ProxyCommon;
-import com.nfinitdev.redstonefluxarsenal.crafting.ModCrafting;
-
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 public class ProxyClient extends ProxyCommon {
     
-    @Override
-    public void preInit () {
-        
-       // ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(TeslaArsenal.blockCharger), 0, new ModelResourceLocation(TeslaArsenal.blockCharger.getRegistryName(), "inventory"));
+	@Override
+	public void registerItemRenderer(Item item, int meta, String id) {
+		ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(Main.instance + ":" + id, "inventory"));
+	}
 
-    //RF Tools
-    ModelLoader.setCustomModelResourceLocation(Main.itemrfpickaxe, 0, new ModelResourceLocation(Main.itemrfpickaxe.getRegistryName(), "inventory"));
-    ModelLoader.setCustomModelResourceLocation(Main.itemrfshovel, 0, new ModelResourceLocation(Main.itemrfshovel.getRegistryName(), "inventory"));
-    ModelLoader.setCustomModelResourceLocation(Main.itemrfsword, 0, new ModelResourceLocation(Main.itemrfsword.getRegistryName(), "inventory"));
-    ModelLoader.setCustomModelResourceLocation(Main.itemrfaxe, 0, new ModelResourceLocation(Main.itemrfaxe.getRegistryName(), "inventory"));
-    ModelLoader.setCustomModelResourceLocation(Main.itemrfhoe, 0, new ModelResourceLocation(Main.itemrfhoe.getRegistryName(), "inventory"));
+	@Override
+    public void preInit(FMLPreInitializationEvent e) {
+		super.preInit(e);	
+		
+		
+		/*
+	    ModelLoader.setCustomModelResourceLocation(Items.itemrfpickaxe, 0, new ModelResourceLocation(Items.itemrfpickaxe.getRegistryName(), "inventory"));
 
-    //RF Armor
-    ModelLoader.setCustomModelResourceLocation(Main.rfArmorHelmet, 0, new ModelResourceLocation(Main.rfArmorHelmet.getRegistryName(), "inventory"));
-    ModelLoader.setCustomModelResourceLocation(Main.rfArmorBoots, 0, new ModelResourceLocation(Main.rfArmorBoots.getRegistryName(), "inventory"));
-    ModelLoader.setCustomModelResourceLocation(Main.rfArmorChestplate, 0, new ModelResourceLocation(Main.rfArmorChestplate.getRegistryName(), "inventory"));
-    ModelLoader.setCustomModelResourceLocation(Main.rfArmorLeggings, 0, new ModelResourceLocation(Main.rfArmorLeggings.getRegistryName(), "inventory"));
+	    //RF Armor
+	    ModelLoader.setCustomModelResourceLocation(Items.rfArmorHelmet, 3, new ModelResourceLocation(Items.rfArmorHelmet.getRegistryName(), "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Items.rfArmorBoots, 0, new ModelResourceLocation(Items.rfArmorBoots.getRegistryName(), "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Items.rfArmorChestplate, 2, new ModelResourceLocation(Items.rfArmorChestplate.getRegistryName(), "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Items.rfArmorLeggings, 1, new ModelResourceLocation(Items.rfArmorLeggings.getRegistryName(), "inventory"));
 
-    //Items
-    ModelLoader.setCustomModelResourceLocation(Main.itemrfenergizedcrystal, 0, new ModelResourceLocation(Main.itemrfenergizedcrystal.getRegistryName(), "inventory"));
-    ModelLoader.setCustomModelResourceLocation(Main.itemrfenergizedgem, 0, new ModelResourceLocation(Main.itemrfenergizedgem.getRegistryName(), "inventory"));
-    ModelLoader.setCustomModelResourceLocation(Main.itemrfdarkingot, 0, new ModelResourceLocation(Main.itemrfdarkingot.getRegistryName(), "inventory"));
+	    //Capacitors RF
+	    ModelLoader.setCustomModelResourceLocation(Items.itemcapacitorRF, 0, new ModelResourceLocation(Items.itemcapacitorRF.getRegistryName(), "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Items.itemcapacitorTier2RF, 0, new ModelResourceLocation(Items.itemcapacitorTier2RF.getRegistryName(), "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Items.itemcapacitorTier3RF, 0, new ModelResourceLocation(Items.itemcapacitorTier3RF.getRegistryName(), "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Items.itemcapacitorCreativeRF, 0, new ModelResourceLocation(Items.itemcapacitorCreativeRF.getRegistryName(), "inventory"));
+	    
+	    //RF Tools
+	   // ModelLoader.setCustomModelResourceLocation(Items.itemrfpickaxe, 0, new ModelResourceLocation(Items.itemrfpickaxe.getRegistryName(), "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Items.itemrfshovel, 0, new ModelResourceLocation(Items.itemrfshovel.getRegistryName(), "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Items.itemrfsword, 0, new ModelResourceLocation(Items.itemrfsword.getRegistryName(), "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Items.itemrfaxe, 0, new ModelResourceLocation(Items.itemrfaxe.getRegistryName(), "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Items.itemrfhoe, 0, new ModelResourceLocation(Items.itemrfhoe.getRegistryName(), "inventory"));
+	    
+	    //Items
+	    ModelLoader.setCustomModelResourceLocation(Items.itemrfenergizedcrystal, 0, new ModelResourceLocation(Items.itemrfenergizedcrystal.getRegistryName(), "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Items.itemrfenergizedgem, 0, new ModelResourceLocation(Items.itemrfenergizedgem.getRegistryName(), "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Items.itemrfdarkingot, 0, new ModelResourceLocation(Items.itemrfdarkingot.getRegistryName(), "inventory"));
 
-    ModelLoader.setCustomModelResourceLocation(Main.itemrfenergizedingot, 0, new ModelResourceLocation(Main.itemrfenergizedingot.getRegistryName(), "inventory"));
-    ModelLoader.setCustomModelResourceLocation(Main.itemrfenergizedplate, 0, new ModelResourceLocation(Main.itemrfenergizedplate.getRegistryName(), "inventory"));
-    ModelLoader.setCustomModelResourceLocation(Main.itemcomponent, 0, new ModelResourceLocation(Main.itemcomponent.getRegistryName(), "inventory"));
-    ModelLoader.setCustomModelResourceLocation(Main.itemtoolhandle, 0, new ModelResourceLocation(Main.itemtoolhandle.getRegistryName(), "inventory"));
-    ModelLoader.setCustomModelResourceLocation(Main.itemtoolrfwrench, 0, new ModelResourceLocation(Main.itemtoolrfwrench.getRegistryName(), "inventory"));
-
-    //Capacitors RF
-    ModelLoader.setCustomModelResourceLocation(Main.itemcapacitorRF, 0, new ModelResourceLocation(Main.itemcapacitorRF.getRegistryName(), "inventory"));
-    ModelLoader.setCustomModelResourceLocation(Main.itemcapacitorTier2RF, 0, new ModelResourceLocation(Main.itemcapacitorTier2RF.getRegistryName(), "inventory"));
-    ModelLoader.setCustomModelResourceLocation(Main.itemcapacitorTier3RF, 0, new ModelResourceLocation(Main.itemcapacitorTier3RF.getRegistryName(), "inventory"));
-    ModelLoader.setCustomModelResourceLocation(Main.itemcapacitorCreativeRF, 0, new ModelResourceLocation(Main.itemcapacitorCreativeRF.getRegistryName(), "inventory"));
-    
-
-    
-    
+	    ModelLoader.setCustomModelResourceLocation(Items.itemrfenergizedingot, 0, new ModelResourceLocation(Items.itemrfenergizedingot.getRegistryName(), "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Items.itemrfenergizedplate, 0, new ModelResourceLocation(Items.itemrfenergizedplate.getRegistryName(), "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Items.itemcomponent, 0, new ModelResourceLocation(Items.itemcomponent.getRegistryName(), "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Items.itemtoolhandle, 0, new ModelResourceLocation(Items.itemtoolhandle.getRegistryName(), "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Items.itemtoolrfwrench, 0, new ModelResourceLocation(Items.itemtoolrfwrench.getRegistryName(), "inventory"));
+*/
+	}
+	
+	@Override
+    public void init(FMLInitializationEvent e) {	
     }
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
 }

@@ -2,9 +2,9 @@ package com.nfinitdev.redstonefluxarsenal;
 
 public class ModInfo {
     public static final String PACKAGE_NAME = "com.";
-    public static final String MOD_ID = "energyarsenal";
-    public static final String MOD_NAME = "Energy Arsenal";
-    public static final String VERSION_BUILD = "1.0";
+    public static final String MOD_ID = "redstonefluxarsenal";
+    public static final String MOD_NAME = "Redstone Flux Arsenal";
+    public static final String VERSION_BUILD = "1.2.0";
     public static final String MINECRAFT_VERSION = "@MCVERSION@";
     public static final String FORGE_VERSION = "@FORGEVERSION@";
     public static final String DEPENDENCIES = "required-after:Forge";

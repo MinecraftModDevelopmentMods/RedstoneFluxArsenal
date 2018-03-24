@@ -11,7 +11,7 @@ public final class ModCrafting {
 
 	public static void initCrafting() {
 
-		
+		/*
 		GameRegistry.addRecipe(new ItemStack(Main.itemcomponent, 1), new Object[] {" # ", "ICI", " # ", '#', Items.REDSTONE, 'I', new ItemStack(Items.DYE, 1, 4),'C',Main.itemrfenergizedgem});
 		GameRegistry.addRecipe(new ItemStack(Main.itemrfenergizedgem, 1), new Object[] {"###", "#C#", "###", '#', Items.REDSTONE, 'I', new ItemStack(Items.DYE, 1, 4),'C',Items.DIAMOND});
 		GameRegistry.addRecipe(new ItemStack(Main.itemrfenergizedingot, 1), new Object[] {"###", "#C#", "###", '#', Items.REDSTONE, 'I', new ItemStack(Items.DYE, 1, 4),'C',Main.itemrfdarkingot});
@@ -30,7 +30,7 @@ public final class ModCrafting {
 		GameRegistry.addRecipe(new ItemStack(Main.rfArmorLeggings, 1), new Object[] {"###", "#C#", "# #", '#', Main.itemrfenergizedplate, 'C',Main.itemcapacitorRF});
 		GameRegistry.addRecipe(new ItemStack(Main.rfArmorBoots, 1), new Object[] {"   ", "# #", "#C#", '#', Main.itemrfenergizedplate, 'C',Main.itemcapacitorRF});
 		GameRegistry.addSmelting(Items.IRON_INGOT, new ItemStack(Main.itemrfdarkingot), 1.0F);
-
+*/
 	}	
 	
 

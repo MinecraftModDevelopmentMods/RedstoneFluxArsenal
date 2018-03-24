@@ -1,9 +1,6 @@
 package com.nfinitdev.redstonefluxarsenal.creativetab;
 
-import com.nfinitdev.redstonefluxarsenal.Main;
-
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -14,12 +11,12 @@ public class CreativeTabMain extends CreativeTabs {
         
         super("redstonefluxarsenal");
     }
-
+/*
 	@Override
 	public ItemStack getIconItemStack() {
 	     return new ItemStack(Main.itemrfpickaxe);	}
     
-
+*/
 	
 	
     @Override

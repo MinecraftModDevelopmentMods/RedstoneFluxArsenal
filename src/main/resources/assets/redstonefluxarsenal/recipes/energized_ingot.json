@@ -1,0 +1,26 @@
+{
+  "result": {
+    "item": "redstonefluxarsenal:itemrfenergizedingot",
+	  "data":0
+  },
+  "pattern": [
+    "OOO",
+    "OQO",
+    "OPO"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "P": {
+      "item": "redstonefluxarsenal:itemrfenergizedcrystal",
+	  "data":0
+    },
+	"Q": {
+      "item": "redstonefluxarsenal:itemrfdarkingot",
+	  "data":0
+    },
+	"O": {
+      "item": "minecraft:redstone",
+	  "data":0
+    }
+  }
+}

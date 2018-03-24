@@ -1,0 +1,22 @@
+{
+  "result": {
+    "item": "redstonefluxarsenal:itemrfdarkingot",
+	  "data":0
+  },
+  "pattern": [
+    "OOO",
+    "OPO",
+    "OOO"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "P": {
+      "item": "minecraft:iron_ingot",
+	  "data":0
+    },
+	"O": {
+      "item": "minecraft:coal",
+	  "data":0
+    }
+  }
+}

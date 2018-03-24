@@ -1,32 +1,22 @@
 package com.nfinitdev.redstonefluxarsenal.item;
-import java.util.Iterator;
 import java.util.List;
 
+import javax.annotation.Nullable;
+
 import com.mojang.realmsclient.gui.ChatFormatting;
+import com.nfinitdev.redstonefluxarsenal.init.ModItems;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.resources.I18n;
-import net.minecraft.entity.Entity;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.item.EntityItem;
-import net.minecraft.entity.item.EntityXPOrb;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.EnumActionResult;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
-import net.minecraftforge.event.entity.player.PlayerPickupXpEvent;
-import net.minecraftforge.fml.common.eventhandler.Event.Result;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -54,14 +44,12 @@ public class ItemRFPickaxe extends ItemRF {
 		return 1 - ((double) this.getEnergyStored(stack) / (double) this.getMaxEnergyStored(stack));
 	}
 
-	@SideOnly(Side.CLIENT)
 	@Override
-	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
-        tooltip.add(ChatFormatting.DARK_RED + I18n.format("[Energy Mode: ON]") );
-
-        tooltip.add(ChatFormatting.DARK_RED + I18n.format("")+ this.getEnergyStored(stack) + "/" + this.getMaxEnergyStored(stack)+ I18n.format(" RF"));
-
-	}
+    @SideOnly(Side.CLIENT)
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
+    {
+        tooltip.add(ChatFormatting.WHITE + I18n.format("Charge: ")+ ChatFormatting.RED + this.getEnergyStored(stack) + "/" + this.getMaxEnergyStored(stack)+ I18n.format(" RF"));
+    }
 
 
     @Override
@@ -71,13 +59,18 @@ public class ItemRFPickaxe extends ItemRF {
 		this.extractEnergy(stack, cost, false);
 		return true;
     }
-
+	@SideOnly(Side.CLIENT)
+	@Override
+    public int getRGBDurabilityForDisplay(ItemStack stack)
+    {
+        return MathHelper.hsvToRGB(Math.max(0.0F, (float) (1.0F - getDurabilityForDisplay(stack))) / 237.0F, 18.0F, 18.0F);
+    }
     @Override
     public boolean canHarvestBlock(IBlockState state)
     {
         return Items.DIAMOND_PICKAXE.canHarvestBlock(state);
     }
-
+/*
     @Override
     public float getStrVsBlock(ItemStack stack, IBlockState state)
     {
@@ -95,8 +88,10 @@ public class ItemRFPickaxe extends ItemRF {
             return super.getStrVsBlock(stack, state);
         }
     }
-    
-
+    */
+    public void registerItemModel() {
+	    ModelLoader.setCustomModelResourceLocation(ModItems.itemrfpickaxe, 0, new ModelResourceLocation(ModItems.itemrfpickaxe.getRegistryName(), "inventory"));
+	}
 }
 
 	

@@ -14,7 +14,7 @@ public class ItemBase3 extends Item {
 		setUnlocalizedName(this.name);
 		setMaxStackSize(1);
 		setMaxDamage(0);
-        setCreativeTab(Main.tab);
+      //  setCreativeTab(Main.tab);
     	
 	}
 

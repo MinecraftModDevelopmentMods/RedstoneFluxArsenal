@@ -1,0 +1,18 @@
+{
+  "result": {
+    "item": "redstonefluxarsenal:rfenergizedarmour.helmet",
+	  "data":0
+  },
+  "pattern": [
+    "ppp",
+    "p p",
+    "   "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+	"p": {
+      "item": "redstonefluxarsenal:itemrfenergizedplate",
+	  "data":0
+    }
+  }
+}

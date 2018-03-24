@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "redstonefluxarsenal:itemrfenergizedplate",
+    "data":0,
+	"count":4
+  },
+  "pattern": [
+    "   ",
+    " pp",
+    " pp"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+	"p": {
+      "item": "redstonefluxarsenal:itemrfenergizedingot",
+	  "data":0
+    }
+  }
+}

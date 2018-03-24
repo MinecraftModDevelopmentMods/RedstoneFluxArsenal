@@ -2,11 +2,15 @@ package com.nfinitdev.redstonefluxarsenal.item;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.annotation.Nullable;
+
 import com.mojang.realmsclient.gui.ChatFormatting;
+import com.nfinitdev.redstonefluxarsenal.init.ModItems;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.resources.I18n;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
@@ -21,6 +25,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.MinecraftForge;
@@ -54,14 +59,12 @@ public class ItemRFShovel extends ItemRF {
 		return 1 - ((double) this.getEnergyStored(stack) / (double) this.getMaxEnergyStored(stack));
 	}
 
-	@SideOnly(Side.CLIENT)
 	@Override
-	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
-        tooltip.add(ChatFormatting.DARK_RED + I18n.format("[Energy Mode: ON]") );
-
-        tooltip.add(ChatFormatting.DARK_RED + I18n.format("")+ this.getEnergyStored(stack) + "/" + this.getMaxEnergyStored(stack)+ I18n.format(" RF"));
-
-	}
+    @SideOnly(Side.CLIENT)
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
+    {
+        tooltip.add(ChatFormatting.WHITE + I18n.format("Charge: ")+ ChatFormatting.RED + this.getEnergyStored(stack) + "/" + this.getMaxEnergyStored(stack)+ I18n.format(" RF"));
+    }
 	  @Override
 	    public boolean onBlockDestroyed(ItemStack stack, World worldIn, IBlockState state, BlockPos pos, EntityLivingBase entityLiving)
 	    {
@@ -75,7 +78,7 @@ public class ItemRFShovel extends ItemRF {
 	    {
 	        return Items.DIAMOND_SHOVEL.canHarvestBlock(state);
 	    }
-
+/*
 	    @Override
 	    public float getStrVsBlock(ItemStack stack, IBlockState state)
 	    {
@@ -95,8 +98,15 @@ public class ItemRFShovel extends ItemRF {
 	        
 	        
 	    }
-	    
-
+	    */    public void registerItemModel() {
+		    ModelLoader.setCustomModelResourceLocation(ModItems.itemrfshovel, 0, new ModelResourceLocation(ModItems.itemrfshovel.getRegistryName(), "inventory"));
+		}
+		@SideOnly(Side.CLIENT)
+		@Override
+	    public int getRGBDurabilityForDisplay(ItemStack stack)
+	    {
+	        return MathHelper.hsvToRGB(Math.max(0.0F, (float) (1.0F - getDurabilityForDisplay(stack))) / 237.0F, 18.0F, 18.0F);
+	    }
 }
 
 	

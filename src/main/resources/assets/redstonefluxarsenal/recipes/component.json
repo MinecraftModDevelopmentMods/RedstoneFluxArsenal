@@ -1,0 +1,22 @@
+{
+  "result": {
+    "item": "redstonefluxarsenal:itemcomponent",
+	  "data":0
+  },
+  "pattern": [
+    "   ",
+    "QQQ",
+    "QpQ"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+	"Q": {
+      "item": "redstonefluxarsenal:itemrfdarkingot",
+	  "data":0
+    },
+	"p": {
+      "item": "minecraft:iron_ingot",
+	  "data":0
+    }
+  }
+}

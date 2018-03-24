@@ -1,0 +1,22 @@
+{
+  "result": {
+    "item": "redstonefluxarsenal:itemrfenergizedgem",
+	  "data":0
+  },
+  "pattern": [
+    "OOO",
+    "OQO",
+    "OOO"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+	"O": {
+      "item": "minecraft:redstone",
+	  "data":0
+    },
+	"Q": {
+      "item": "minecraft:diamond",
+	  "data":0
+    }
+  }
+}

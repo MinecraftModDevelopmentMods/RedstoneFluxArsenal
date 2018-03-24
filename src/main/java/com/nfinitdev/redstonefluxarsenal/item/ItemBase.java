@@ -10,7 +10,7 @@ public class ItemBase extends Item
 
 	public ItemBase()
     {
-        setCreativeTab(Main.tab);
+       // setCreativeTab(Main.tab);
 
 	
     }
